@@ -16,7 +16,6 @@ The project is structured as follows, focusing on the main components that you w
     │   └── 📄 resume.json: CV in JSON format (https://jsonresume.org/)
 ├── 📂 _bibliography/
 │   └── 📄 papers.bib: bibliography in BibTeX format
-├── 📂 _books/: contains the bookshelf pages
 ├── 📄 _config.yml: the configuration file of the template
 ├── 📂 _data/: contains some of the data used in the template
 │   ├── 📄 cv.yml: CV in YAML format, used when assets/json/resume.json is not found
