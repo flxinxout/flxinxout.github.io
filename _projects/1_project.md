@@ -56,5 +56,3 @@ With MLIR-AIE, I got the chance to finally finish my DFT kernel for DFTs of size
 <div class="caption">
     General overview of how MLIR-AIE and XRT have been used to run a DFT kernel. In the Host, the configuration of the tiles & the kernel are processed by MLIR-AIE, resulting in multiple files. The C++ Host code using XRT (Xilinx runtime) synchronizes the data to be processed by the kernel. The data is managed by two ObjectFIFOs of_in and of_out.
 </div>
-
-{% endraw %}
