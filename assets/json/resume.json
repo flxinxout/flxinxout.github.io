@@ -54,6 +54,7 @@
     {
       "institution": "EPFL Xplore, Switzerland",
       "location": "Lausanne",
+      "url": "https://www.epfl-xplore.ch/",
       "studyType": "Control Station Team Member",
       "startDate": "2024-02",
       "endDate": "2024-09",
@@ -65,6 +66,7 @@
     {
       "institution": "EPFL Xplore, Switzerland",
       "location": "Lausanne",
+      "url": "https://www.epfl-xplore.ch/",
       "studyType": "Software System Engineer",
       "startDate": "2024-09",
       "endDate": "2025-09",
@@ -77,6 +79,7 @@
     {
       "institution": "EPFL Xplore, Switzerland",
       "location": "Lausanne",
+      "url": "https://www.epfl-xplore.ch/",
       "studyType": "Vice-President for Xplore Research",
       "startDate": "2025-09",
       "endDate": "---",
@@ -167,7 +170,7 @@
   ],
   "projects": [
     {
-      "name": "Evaluation of NPU Acceleration for Offloading 5G Software Functions",
+      "name": "Evaluation of NPU Acceleration for Offloading 5G Software Wordloads",
       "summary": "FFT Implementation on a XDNA/AIE-ML Neural Processing Unit using MLIR-AIE. Evaluation of the performance compared to a CPU-based implementation from srsRAN, a open-source 5G stack.",
       "highlights": ["MLIR-AIE", "NPU", "5G"],
       "startDate": "2025-02",
