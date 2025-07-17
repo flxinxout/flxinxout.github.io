@@ -58,50 +58,50 @@ The next table summarizes the important limitations that I encountered while wor
   </thead>
   <tbody>
     <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>Twiddles</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">Twiddles</strong></td>
+      <td style="padding: 8px; color: #000000;">
         Numerical values have to be computed prior to invocation of the AIE‑API’s FFT algorithm because of the strict requirement for bfloat16 data type.
       </td>
     </tr>
     <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>Lack of radix‑based FFT</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">Lack of radix‑based FFT</strong></td>
+      <td style="padding: 8px; color: #000000;">
         The lack of radix‑3 and radix‑5 implementation for AIE‑ML architecture lets us compute N‑point DFTs only for N = 2ᵏ, for k < 2. Back‑to‑back ssrRAN uses N = 754, advanced considerations have to be done. 
       </td>
     </tr>
      <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>Floating point data type</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">Floating point data type</strong></td>
+      <td style="padding: 8px; color: #000000;">
         XDNA AIE‑ML architecture does not support float32, but only bfloat16, which has lower precision. Float32 can be emulated in software, but slows down the computations.
       </td>
     </tr>
      <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>Complex data type</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">Complex data type</strong></td>
+      <td style="padding: 8px; color: #000000;">
         LLVM‑AIE does not support FFT intrinsics of AIE‑API for complex types. The use of xchesscc coming with the Vitis Tools from AMD/Xilinx is mandatory. 
       </td>
     </tr>
      <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>XRT’s kernel overhead</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">XRT’s kernel overhead</strong></td>
+      <td style="padding: 8px; color: #000000;">
        After experimentation, XRT has an overhead between 30 and 60𝜇s when running a single kernel. The CPU takes around 3𝜇s to run one DFT. Running one DFT at a time was necessary to benchmark against srsRAN, as they compute one DFT at a time. Several solutions are discussed in the Result section, involving OpenCL for example.
       </td>
     </tr>
      <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>Trace in MLIR‑AIE</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">Trace in MLIR‑AIE</strong></td>
+      <td style="padding: 8px; color: #000000;">
         Tracing is not implemented in IRON API. Any IRON file has to be converted using CTM implementation.              
       </td>
     </tr>
      <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>xchesscc & instructions file</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">xchesscc & instructions file</strong></td>
+      <td style="padding: 8px; color: #000000;">
         When switching from Peano to xchesscc compiler, we highlight that the instructions file for the NPU is not hexadecimal, a requirement from XRT.          
       </td>
     </tr>
     <tr style="background-color: #f2f6fc;">
-      <td style="padding: 8px;"><strong>DMA channels in CTs</strong></td>
-      <td style="padding: 8px;">
+      <td style="padding: 8px;"><strong style="color: #000000;">DMA channels in CTs</strong></td>
+      <td style="padding: 8px; color: #000000;">
         The number of input and output DMA channels of the tiles are an absolute hardware limitation. It limits the number of ObjectFIFOs, taking each a channel. As mentioned in the introduction, two in and two out DMA channels are available.        
       </td>
     </tr>
