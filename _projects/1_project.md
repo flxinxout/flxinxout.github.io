@@ -5,10 +5,12 @@ description: Evaluation of NPU Acceleration for Offloading 5G Software Wordloads
 img: assets/img/npu.jpg
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
-Neural Processing Units are recent hardware-specialized chips. Primarily composed of AI Engines and commonly incorporated in modern microprocessors, they serve as fast compute units for specific applications like Digital Signal Processing (DSP) and Machine Learning. The idea of the project was to explore the possibility to offload software 5G workloads into a NPU with XDNA AIE-ML architecture from AMD/Xilinx using MLIR-AIE, an open-source toolkit that targets AI Engines in both Versal and Ryzen AI products. Evaluating the performance compared to CPU-based implementations was a second objective. I took the liberty to benchmark against srsRAN, a 5G open-source stack, and benchmarked on Discrete Fourier Transforms (DFTs). In addition, I tried to explain to new developers how to efficiently program the AI Engines using MLIR-AIE, but also highlighted the encountered issues while programming in this architecture and toolchain. To finish, because it has been a project at the frontier of the research (very recent piece of hardware with no real projects), I've pointed the necessary documentation for new researchers who would like to dig into the software paradigm of AI Engines.
+Full Report: [HERE](/assets/pdf/Master_Semester_Project_Report.pdf)
+
+Neural Processing Units are recent hardware-specialized chips. Primarily composed of AI Engines and commonly incorporated in modern microprocessors, they serve as fast compute units for specific applications like Digital Signal Processing (DSP) and Machine Learning. The idea of the project was to explore the possibility to offload software 5G workloads into a NPU with XDNA AIE-ML architecture from AMD/Xilinx using MLIR-AIE, an open-source toolkit that targets AI Engines in both Versal and Ryzen AI products. Evaluating the performance compared to CPU-based implementations was a second objective. I took the liberty to benchmark against srsRAN, a 5G open-source stack, and benchmarked on Discrete Fourier Transforms (DFTs). In addition, I tried to explain to new developers how to efficiently program the AI Engines using MLIR-AIE, but also highlighted the encountered issues while programming in this architecture and toolchain. To finish, because it has been a project at the frontier of the research (very recent piece of hardware with no real projects), I've pointed the necessary documentation for new researchers who would like to dig into the software paradigm of AI Engines.&nbsp;
 
 <div class="mt-3 mt-md-0">
   {% include figure.liquid
@@ -124,3 +126,11 @@ With MLIR-AIE, I got the chance to finish my kernel for computing DFTs of size N
 </div>
 
 I don't want to give too much details here, but the idea is pretty simple when you said it loud. The confguration of the tiles is done via MLIR-AIE. It setups an IT to bridge with external memory, and a CT to compute a DFT. They are linked with ObjectFIFOs, abstract elements implementing first-in first-out buffers to send data across the NPU. In addition, the toolchain outputs a binary file (xclbin) and instructions file that are used by a runtime called XRT to let the host code actually execute the DFT kernel on the NPU.
+
+<h2>Conclusion</h2>
+
+The term "evaluation" in the title of this project permitted me to conclude if yes or no, offloading DFTs on XDNA/AIE-ML NPU architecture is interesting. The answer is <strong>NO</strong> for many reasons, but even if I can moderate the no with a very small yes, let me explain the results.
+
+The idea has been to benchmark the time needed for the NPU to compute a 512-point DFT against a CPU implementation from srsRAN. I can fairly answer that the NPU is not optimal. Kernels have overhead when starting them (resource allocations most of the time) of around 60 microseconds. Computing DFTs sequentially, one at a time, is not a good way of measuring efficiency in an NPU. But because srsRAN was computing DFTs like that, and I didn't have time to build another benchmark, this is the main numerical result that I could made. In addition, the number of issues I got to just run complex-floats operations let me perplexe on the use of this ML architecture for DSP applications (seems a little bit logic... its in the name). 
+
+Still, I strongly disagree that NPU are not useful, we just need the right one: the XDNA/AIE architecture contained in Versal SoCs from AMD. A new project would be to offload DFTs on this chips and see how the CPU can compute other stuff rapidly, see if we can gain time and performance: that's the main idea behind the NPU, relax the CPU.

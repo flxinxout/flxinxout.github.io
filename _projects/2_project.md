@@ -5,67 +5,46 @@ description: Speeding up the Quantification of Data Staleness in Dynamic Bayesia
 img: assets/img/bayesian.png
 importance: 2
 category: work
-related_publications: true
+related_publications: false
 ---
 
-In the third year of Bachelor at EPFL you have to find a semester
+Full Report: [HERE](/assets/pdf/Final_Bachelor_Project.pdf)
+Main Paper: [HERE](/assets/pdf/thistooshallpass.pdf)
 
-Some algorithms have been proposed to extend Bayesian Optimization (BO) to time-varying functions. This adaptation is known as Dynamic Bayesian Optimization (DBO). To achieve great performance, W-DBO from [3] uses a criterion that quantifies how relevant an observation is for the future predictions of the Gaussian Process. By evolving in time, the optimum of the function changes, and observations of the function become less relevant due to their lack of information on its future values. In a long-period time optimization, keeping all of them will impact the performance of the algorithm. In fact, the sampling frequency will decrease due to the growth of the Gaussian Process’ inference time. To remove them rapidly, the criterion should be calculated efficiently in
-a low-level programming language. By speeding up the computations using C++ to calculate the criterion, W-DBO shown great improvements over state of the art solutions. We present in this work (i) the C++ implementation, (ii) the performance of this implementation compared to a Python implementation, (iii) the performance of W-DBO compared to the state of the art. Additionally, we develop Python packages for W-DBO and the criterion.
+In the third year of Bachelor at EPFL you have to find a semester project in a laboratory. I chose to go in the lab of one of my favorite professor (Prof. Patrick Thiran), and found an interesting topic: Dynamic Bayesian Optimization (DBO). Its an extention of Bayesian Optimization (BO) to time-varying fucntions. The idea is to optimize a function without knowing its functional form, leaving gradient-descent methods for example useless. My project involved understanding a new algorithm developed by my supervisor Anthony Bardou called [W-DBO](https://arxiv.org/abs/2405.14540). It uses a criterion that quantifies how relevant an observation is for the future predictions of the Gaussian Process, the main concept used by the BO framework. The goal of the project has been to (i) implement the criterion in C++ and calling it using Python bindings, (ii) evaluate the performance of this implementation compared to a Python implementation, (iii) evaluate the performance of W-DBO compared to the state of the art. 
+
+Additionally, we develop [Python packages](https://github.com/WDBO-ALGORITHM) for W-DBO and the criterion!
 
 <div class="mt-3 mt-md-0">
   {% include figure.liquid
       loading="eager"
-      path="assets/img/1.png"
+      path="assets/img/publication_preview/thistooshallpass_good.gif"
       title="example image"
       class="img-fluid rounded mx-auto d-block z-depth-1" %}
 </div>
 <div class="caption">
-    
+
 </div>
 
+<h2>The core of the project</h2>
+
+By evolving in time, the optimum of the function changes, and observations of the function become less relevant due to their lack of information on its future values. In a long-period time optimization, keeping all of them will impact the performance of BO. In fact, the sampling frequency will decrease due to the growth of the Gaussian Process’ inference time. For people knowing Gaussian Processes, conditioning it with a new observation does not change the distribution, leaving this method very useful for calculations. To remove them rapidly, the criterion should be calculated efficiently in a low-level programming language.
+
+<h2>Results</h2>
+
+By speeding up the computations using C++ to calculate the criterion, W-DBO shown great improvements over state of the art solutions. The idea has been to follow the main paper introducing W-DBO and solving the equations in the code using the linear algebra library Eigen3. I really enjoyed implementing maths in C++, because it has been the first time where you understand that implementing mathematical stuff is not easy. Take for example derivatives, how do you compute them without a closed-form? Or inverting a matrix efficiently?
+
+The first question was solved using a very simple class for differentiation, using the concept of auto-differentiation. You start with a complicated function and you break it down using the basic laws of differentiation (products, sums, constants, etc). I had the chance to have functions not too complicated, but still involving many types of products, etc. The second question was answered case by case. Most of my matrices where positive semi-definite (PSD), giving cool properties for speeding up computations. You will find everything in [my report](/assets/pdf/Final_Bachelor_Project.pdf) if you are interested in these problem-solving concepts.
+
+In the end, I got this following graph, where we see the optimization that I've done to compute the criterion.
 
 <div class="mt-3 mt-md-0">
   {% include figure.liquid
       loading="eager"
-      path="assets/img/2.png"
+      path="assets/img/criterion.png"
       title="image"
       class="img-fluid rounded mx-auto d-block z-depth-1" %}
 </div>
 <div class="caption">
-    
+Average execution time of five runs for many sizes of dataset (i.e. |D|) with different implementations. The blue dots are the Python implementation, the red are the C++ implementation without vectorization and the pink are with vectorization. The plot is in logscale. We achieve between one and two orders of magnitude faster with the second C++ version compared to the Python version.
 </div>
-
-<h2>bla</h2>
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
