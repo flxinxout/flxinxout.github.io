@@ -24,6 +24,6 @@ announcements:
 Master student in Communication Systems at the Swiss Federal Institute of Technology in Lausanne (EPFL). I have previously recieved my Bachelor degree in Communication Systems at EPFL in 2024. 
 
 I'm interested in a number of engineering fields, including quantum computing, communication theory
-and robotics. Jointly to my studies, I'm currently the Software System Engineer at [Xplore EPFL](https://epfl-xplore.ch/), a space-led swiss robotics association from EPFL building each year a Martian-like Rover to compete in the [European Rover Challenge](https://roverchallenge.eu/). I'm responsible for the entire software including the navigation, the control of the robotic arm and the developement of the control station, ensuring stable wireless communication with the Rover.
+and robotics. Jointly to my studies, I'm currently the Software System Engineer at [EPFL Xplore](https://epfl-xplore.ch/), a student-led swiss robotics association from EPFL building each year a Martian-like Rover to compete in the [European Rover Challenge](https://roverchallenge.eu/). I'm responsible for the entire software including the navigation, the control of the robotic arm and the developement of the control station, ensuring stable wireless communication with the Rover.
 
 I'm actually searching an Intership in space industry. 
