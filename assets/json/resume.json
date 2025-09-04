@@ -6,7 +6,7 @@
     "email": "giovanni.ranieri@epfl.ch",
     "phone": "(+41)79 1527842",
     "url": "https://www.linkedin.com/in/giovanni-ranieri-9010a3222/",
-    "summary": "Master Student in Communication Systems. Currently Software System Engineer at EPFL Xplore, supervising the entire software system of the Rover for the European Rover Challenge 2025. Passionate about communication theory and space engineering",
+    "summary": "Master Student in Communication Systems. Currently Vice President of EPFL Xplore Research pole. Passionate about communication theory and space engineering",
     "location": {
       "address": "EPFL",
       "postalCode": "1007",
@@ -72,7 +72,7 @@
       "endDate": "2025-09",
       "courses": [
         "Responsible for the entire software system of the Rover",
-        "Implementation of Robust and modular solutions",
+        "Achieved 1st place at the European Rover Challenge 2025",
         "Management of 20 students in the software team"
       ]
     },
@@ -92,6 +92,12 @@
     {
       "name": "European Rover Challenge 2024",
       "date": "2024-07-08",
+      "issuer": "European Space Foundation",
+      "icon": "fa-solid fa-location-dot"
+    },
+    {
+      "name": "European Rover Challenge 2025",
+      "date": "2025-07-08",
       "issuer": "European Space Foundation",
       "icon": "fa-solid fa-location-dot"
     }
