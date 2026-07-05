@@ -71,6 +71,11 @@ ninja.data = [{
           description: "Speeding up the Quantification of Data Staleness in Dynamic Bayesian Optimization",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-master-semester-project",
+          title: 'Master Semester Project',
+          description: "Enabling Joint Communication and Sensing Through RFSoC-Controlled Phased Array Waveforms",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{
         id: 'social-email',
         title: 'email',
