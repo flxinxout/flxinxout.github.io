@@ -23,7 +23,8 @@ announcements:
 
 Master student in Communication Systems at the Swiss Federal Institute of Technology in Lausanne (EPFL). I have previously recieved my Bachelor degree in Communication Systems at EPFL in 2024. 
 
-I'm interested in a number of engineering fields, including quantum computing, communication theory
-and robotics. Jointly to my studies, I'm currently the Vice President for the Research pole at [EPFL Xplore](https://epfl-xplore.ch/), a student-led swiss robotics association from EPFL, overseeing its activities and representing the association. I was previously the Software System Engineer in the competition pole, building each year a Martian-like Rover to compete in the [European Rover Challenge](https://roverchallenge.eu/). I was responsible for the entire software including the navigation, the control of the robotic arm and the developement of the control station, ensuring stable wireless communication with the Rover. We are proud that we achieved the 1st place in 2025!
+I'm interested in a number of engineering fields, including communication theory, wireless networks
+and robotics. Jointly to my studies, I'm currently the Vice President for the Research pole at [EPFL Xplore](https://epfl-xplore.ch/), a student-led swiss robotics association from EPFL, and I'm overseeing its activities and representing the association. I was previously the Software System Engineer in the competition pole, building each year a Martian-like Rover to compete in the [European Rover Challenge](https://roverchallenge.eu/). I was responsible for the entire software including the navigation, the control of the robotic arm and the developement of the control station, ensuring stable wireless communication with the Rover. We are proud that we achieved the 1st place in 2025!
 
-I'm actually searching an Intership in space industry. 
+I'm actually doing my Master thesis at Pavonis LLC working on OFDM-Integrated Sensing and Communication (OFDM-ISAC) for future 6G open-source platforms, 
+and supervised by Professor Haitham Al Hassanieh of the Networking and Sensing Laboratory (SENS) at EPFL.

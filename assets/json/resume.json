@@ -35,8 +35,8 @@
       "studyType": "Master Communication Systems",
       "startDate": "2024-09",
       "endDate": "2027-07",
-      "courses": ["Modern Digital Communication", "Statistical Signal Processing", "Machine Learning", 
-                  "Embedded System Design"]
+      "courses": ["Modern Digital Communication", "Statistical Signal Processing", "Wireless Technologies", "Information Theory",
+                  "Embedded Systems"]
     },
     {
       "institution": "EPFL, Switzerland",
@@ -84,7 +84,7 @@
       "startDate": "2025-09",
       "endDate": "---",
       "courses": [
-        "Overseeing the research activities of the pole Xplore Research"
+        "Overseeing the research activities of the pole Xplore Research. Developed a new structure for call for proposals."
       ]
     }
   ],
@@ -115,7 +115,7 @@
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Java", "C/C++", "Python", "TypeScript", "Assembly"
+        "Java", "C/C++", "Verilog", "Python", "TypeScript", "Assembly"
       ]
     },
     {
@@ -155,26 +155,19 @@
   ],
   "interests": [
     {
-      "name": "Communication Theory",
+      "name": "Communication Theory and Wireless Networks",
       "icon": "fa-solid fa-tag",
-      "keywords": ["Coding", "Passband/Baseband Communication"]
-    },
-    {
-      "name": "Quantum Computing",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Algorithms", "Distributed Quantum Algorithms"
-      ]
-    },
-    {
-      "name": "Space Engineering",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Signal Processing", "Image Processing", "Data Management"
-      ]
+      "keywords": ["Passband/Baseband Communication", "Mobile Networks", "Integrated Sensing and Communication"]
     }
   ],
   "projects": [
+    {
+      "name": "Enabling Joint Communication and Sensing Through RFSoC-Controlled Phased Array Waveforms",
+      "summary": "Investigated a Joint Sensing and Communication (JSAC) waveform in a 6G experimental platform called HELIX, and enabled hardware digital beamforming between ZCU208 Evaluation board and EVK Phased Array.",
+      "highlights": ["RFSoC", "Phased Array", "6G", "Embedded Systems"],
+      "startDate": "2026-02",
+      "endDate": "2026-06"
+    },
     {
       "name": "Evaluation of NPU Acceleration for Offloading 5G Software Wordloads",
       "summary": "FFT Implementation on a XDNA/AIE-ML Neural Processing Unit using MLIR-AIE. Evaluation of the performance compared to a CPU-based implementation from srsRAN, a open-source 5G stack.",
