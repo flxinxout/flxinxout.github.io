@@ -3,7 +3,7 @@ layout: page
 title: Master Semester Project
 description: Evaluation of NPU Acceleration for Offloading 5G Software Wordloads
 img: assets/img/npu.jpg
-importance: 1
+importance: 2
 category: work
 related_publications: false
 ---

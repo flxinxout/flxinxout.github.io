@@ -3,7 +3,7 @@ layout: page
 title: Bachelor Semester Project
 description: Speeding up the Quantification of Data Staleness in Dynamic Bayesian Optimization
 img: assets/img/bayesian.png
-importance: 2
+importance: 3
 category: work
 related_publications: false
 ---
